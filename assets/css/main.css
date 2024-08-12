@@ -1729,6 +1729,12 @@ input, select, textarea {
 							padding-top: 40px;
 						}
 
+			#contact i{
+				transform: scale(0.5);
+				transition: all 0.5s;
+		
+			}
+
 		}
 
 /* Sections/Article */
