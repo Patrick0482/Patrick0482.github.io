@@ -1773,24 +1773,24 @@ input, select, textarea {
 		.image.fit {
 			display: block;
 			width: 100%;
-			transition: transform .5s; /* Animation */
-			transition: filter .5s; /* Animation */
+			transition: transform 1s; /* Animation */
+			transition: filter 1s; /* Animation */
 		}
 
 		.image.fit.main {
 			display: rel;
 			width: 100%;
-			transition: transform .3s; /* Animation */
+			transition: transform .5s; /* Animation */
 			transition: filter .5s; /* Animation */
 		}
 
 		.image.fit:hover {
-			transform: scale(1.1);
+			transform: scale(1.05);
 		}
-		.image.fit.main:hover {
+		/* .image.fit.main:hover {
 			transform: scale(1.1);
 			filter: brightness(0.5) blur(2px);
-		}
+		} */
 
 		.image.fit.main:hover .image.text {
 			color: #ffffff;
@@ -1800,14 +1800,23 @@ input, select, textarea {
 			color: white;
 			z-index: 10;
 			position: relative;
+			top: 50%;
 			
 			
 			margin: 0; /* Remove margins */
 				}
-		/* .item.main:hover {
+
+		.item.main{
+			display: block;
+			width: 100%;
+			margin: 0 0 2em 0;
+			transition: transform 1s; /* Animation */
+			transition: filter 1s; /* Animation */
+		}
+		.item.main:hover {
 			transform: scale(1.1);
 			/* filter: brightness(0.5) blur(2px); */
-				 */
+		}
 
 		.image.featured {
 			display: block;
@@ -2113,9 +2122,37 @@ input, select, textarea {
 
 					#nav ul li a.active span:before {
 						color: #e27689;
-					}
+					}asda
     #contact {
-		height: 1em;
+		height: 0.5vh;
+		background-color: #000000;
+	}
+
+	#networks{
+		padding-bottom: 100px;
+		display: flex;
+		justify-content: center;
+		gap: 200px;
+	}
+
+	#email{
+		font-size: 50px;
+	}
+
+	#contact i{
+		padding: 25px;
+		transform: scale(0.8); 
+		transition: transform 200ms,
+					border-radius 200ms,
+					color 200ms,
+					background-color 200ms;
+	}
+	
+	#contact i:hover{
+		transform: scale(1);
+		border-radius: 36px;
+		color: white;
+		background-color: black;
 	}
 /* Footer */
 
@@ -2205,7 +2242,7 @@ input, select, textarea {
 			}
 
 			#main > section.three {
-				background-color: #ecf1f1;
+				background-color: #000000;
 			}
 
 			#main > section.four {
