@@ -1,0 +1,1076 @@
+/*Meno: Patrik Früštök
+ *login: xfrust00
+*/
+
+
+/* Changes the width, color and track color of the scrollbar */
+body::-webkit-scrollbar {                       
+    width: 0.5em;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: white;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: black;
+}
+
+/* Setting up for the javascript to make the sections reveal themselves */
+.reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease;
+  }
+  
+.reveal.active{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* Color of visited, active links and selection */
+a:visited { color:black }
+a:active { color:#9A8174 }
+
+::selection{
+    color: white;
+    background-color: #9A8174;
+}
+
+/***************BODY**************/
+
+html{
+    width: 100vw;
+
+}
+
+body{
+    min-width: 375px;
+    min-height: 600px;
+    margin: 0px;
+    padding: 0;
+    font-family: 'Roboto Slab', serif;
+    line-height: 1.7;
+    background-color: black;
+}
+
+section{
+    margin: 60px 0px 80px 0px;
+}
+
+h1{
+    display: inline-block;
+    font-size: 90px;
+    color: white;
+}
+
+h2{
+    display: inline-block;
+    font-size: 25px;
+    font-style: italic;
+    color: white;
+}
+
+h3{
+    font-size: 40px;
+    color: white;
+}
+
+h4{
+    font-size: 40px;
+    color: white;
+}
+
+h5{
+    margin: 0;
+    visibility: hidden;
+    color: white;
+}
+
+/***************NAVIGATION**************/
+
+
+#navigation{
+    z-index: 999;               /*making it always on top*/
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: .05em;
+    position: fixed; 
+    top: 0;
+    background-color: white;
+}
+
+#navigation a{
+    color: white;
+}
+#navigation ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0px;
+}
+
+#navigation a{
+    line-height: 15px;
+    font-size: 1.5em;
+}
+
+#navigation li:hover{
+    text-decoration: underline;
+}
+
+#navigation li{
+    margin: 0em 1em 0em 0em;
+    
+}
+
+#nav-content{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    width: 100vw;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown-content {
+    display: none;                                      /*hiding the dropdown menu if not hovered*/
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.dropdown-content{
+    font-size: 13px;
+}
+.dropdown-content a {
+    float: none;
+    color: white;
+    padding:15px 15px 15px 5px;
+    text-decoration: underline;
+    display: block;
+    text-align: left;
+}
+  
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display:block;
+    transition: 1.5s;
+} 
+
+
+
+/***************HEADER**************/
+
+header {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("https://lh3.googleusercontent.com/d/1hsjmOI1HBghpVW94UlGj_BsfH--7B72L");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+}
+
+header h1{
+    width: 700px;
+    display: block;
+    font-weight: bold;
+    position: absolute;
+    top: 25vh;
+    left: 10vh;
+}
+
+header h2{
+    width: 800px;
+    display: block;
+    font-weight: lighter;
+    position: absolute;
+    top: 50vh;
+    left: 10vh;
+}
+
+
+/***************ABOUT**************/
+#about{
+    margin: 0;
+    padding-bottom: 12em;
+}
+.background-image {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    background-image: url(img/city.jpg);
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 98vh;
+    -webkit-filter: blur(4px);              /* bluring the image with a filter */
+    filter: blur(4px);
+    overflow: hidden;
+}
+
+
+#about h3{
+    z-index: 999;
+    color: white;
+    transform: rotate(-90deg);              /* rotating the title of each section so it is vertical in the left */
+    position: absolute;
+    font-size: 100px;
+    margin: 0px;
+    top: 40vh;
+    left: -7vw;
+}
+
+.about-card {
+    display: flex;
+    z-index: 9999;
+    position: relative;
+    border-radius: 16px;
+    margin: auto;
+    width: 500px;
+    height: 600px;
+    max-width: 100%;
+    min-height: 700px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border: 5px white solid;
+    overflow: hidden;
+    background-image: url(img/myself.jpg);
+    background-size: cover;
+}
+
+#about-all{
+    padding-top: 10vh;
+    display: flex;
+    justify-content: center;
+}
+
+.info {
+    position: relative;
+    width: 100%;
+    height:700px;
+    background-color: #fff;
+    transform: translateY(100%)
+      translateY(-130px)
+      translateZ(0);
+    transition: transform 0.5s ease-out;
+}
+
+.info:before {                  /* characteristics of .info which is hidden at first and slides in on :hover */
+    z-index: -1;
+    display: block;
+    position: absolute;
+    content: ' ';
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-image: url(img/myself.jpg);
+    filter: blur(10px);
+    background-size: cover;
+    opacity: 0.25;
+    transform: translateY(-100%) translateY(130px) translateZ(0);       /* I've used transform: translate X Y Z a few times to position elements */
+    transition: transform 0.5s ease-out;                                /* using transition for smoother experience */
+}
+
+.about-card:hover .info,                        /* bringing up the info part */
+.about-card:hover .info:before {
+    transform: translateY(0) translateZ(0);
+}
+
+.about-card:hover .title{
+    border-bottom: black 3px solid;
+}
+
+.title {
+    text-align: center;
+    margin: 0;
+    padding: 30px;
+    font-size: 40px;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.87);
+}
+  
+.description {
+    margin: 0;
+    padding: 24px 24px 0px 24px;
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.about-card h6{
+    font-size: 32px;
+    padding-left: 24px;
+}
+
+
+
+/***************PORTFOLIO**************/
+
+#portfolio-jump{
+    visibility: hidden;                         /* I've used a few "jumps" to make sure that my navigation bar is not in the way of the elements */
+}                                                           
+
+.photo-grid{                                    /*creating the grid of my portfolio*/
+    margin-top: 5vh;
+    margin-left: 25vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 74px;
+    grid-row-gap: 120px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.photo-grid.side{                                    /*creating the grid of my portfolio*/
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    max-width: 1600px;
+    width: 100%;
+}
+
+
+
+.photo{
+    list-style: none;
+    position: relative;
+    border-radius: 16px;
+}
+
+.widephoto{
+    list-style: none;
+    position: relative;
+    border-radius: 16px;
+    width: 100%;
+    display: grid;
+    margin-bottom: 50px; /* Add margin between wide photos if needed */
+}
+
+.widephoto:before{                          
+    content: '';
+    display: block;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio for the wide photo */
+    width: 100%;
+}
+
+  
+.photo:before{                          
+    content: '';
+    display: block;
+    padding-bottom: 150%;
+    width: 100%;
+}
+  
+.photo_background{    
+    
+    background-size: cover;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    transform-origin: center;                           /* the starting origin of the transform */
+    transform: scale(1) translateZ(0);
+    transition: 
+      filter 200ms linear,
+      transform 200ms linear;
+    
+}
+
+  
+.photo:hover .photo_background{                 /*making the image bigger on :hover*/
+    transform: scale(1.4) translateZ(0);
+}
+  
+.photo-grid:hover:hover > .photo:not(:hover) .photo_background{         /* making all other photos which are not :hover darker and blurred */
+    filter: brightness(0.5) blur(1px);
+}
+
+.photo-grid.side:hover:hover > .photo:not(:hover) .photo_background{         /* making all other photos which are not :hover darker and blurred */
+    filter: brightness(1);
+}
+
+.photo-grid.side .photo:hover .photo_background{                 /*making the image bigger on :hover*/
+    transform: scale(1.01) translateZ(0);
+}
+  
+.photo_content{
+    left: 0;
+    padding-left: 14px;
+    position: absolute;
+    top: 85%;
+}
+  
+.photo_date{
+    position: absolute;
+    top: 20px;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    width: 250px;
+}
+  
+.photo_heading{
+    white-space: nowrap;
+    margin: 0;
+    color: white;
+    font-size: 24px;
+    text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+    line-height: 1.4;
+    word-spacing: 0;
+}
+
+#portfolio h3{
+    z-index: 999;
+    transform: rotate(-90deg);
+    position: absolute;
+    font-size: 100px;
+    margin: 0px;
+    top: 28vh;
+    left: -7vw;
+}
+
+/***************SIDE PAGES**************/
+
+
+/***************CONTACT**************/
+
+#networks{
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+}
+
+#contact-all{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 200px;
+}
+
+#contact{
+    margin: 0;
+    z-index: 1;
+    position: relative;
+}
+
+#contact h3{
+    z-index: 999;
+    color: white;
+    transform: rotate(-90deg);
+    position: absolute;
+    font-size: 90px;
+    margin: 0px;
+    top:200px;
+    left: -40px;
+}
+
+#contact i{
+    padding: 25px;
+    transform: scale(1); 
+    transition: transform 200ms,
+                border-radius 200ms,
+                color 200ms,
+                background-color 200ms;
+    color: white;
+}
+
+#contact i:hover{
+    transform: scale(1.5);
+    border-radius: 36px;
+    color: white;
+    background-color: black;
+}
+
+#contact p{
+    font-size: 40px;
+    color: white;
+}
+
+/***************FOOTER**************/
+
+#footer .content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+#footer{
+    
+    font-size: 16px;
+    padding: 1em 8em 2em 8em;
+    background-color: black;
+    color: rgb(180, 180, 180);
+}
+
+
+/***************MEDIA**************/
+/*------Responsivness all the way down to >400px width------*/
+
+@media screen and (max-width: 1700px){
+    header h1{
+        font-size: 90px;
+        transition: all 0.5s;
+    }
+    header h2{
+        font-size: 40px;
+        transition: all 0.5s;
+    }
+
+    .about-card{
+        transform: scale(0.8);
+    }
+    .spacex-text{
+        width: 200px;
+    }
+
+    .photo-grid{
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 54px;
+        grid-row-gap: 100px;
+    }
+
+    .photo-grid.side{
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+
+    .photo-grid a{
+        transform: scale(0.75);
+    }
+}
+
+@media screen and (max-width: 1600px){
+    .school-img img{
+        height: 300px;
+        width: 500px;
+    }
+
+    .card .details{
+        font-size: 18px;
+        top: 0;
+        left: 0;
+    }
+    .card h4{
+        font-size: 28px;
+    }
+
+    .card:first-child .details{
+        left: 20px;
+    }
+
+    .photo-grid{
+        max-width: 1100px;
+        grid-column-gap: 10px;
+        grid-row-gap: 0px; 
+        transition: all 0.5s;
+    }
+}
+
+@media screen and (max-width: 1500px){
+    
+    .photo-grid{
+        max-width: 900px;
+        grid-column-gap: 10px;
+        grid-row-gap: 0px;  
+    }
+
+    .photo-grid.side{
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+}
+}
+
+@media screen and (max-width: 1400px){
+    #education .schools{
+        flex-direction: column;
+        padding-top: 30vh;
+    }
+    #networks{
+        gap: 100px;
+    }
+}
+
+@media screen and (max-width: 1300px){
+    header h1{
+        font-size: 80px;
+        transition: all 0.5s;
+    }
+    header h2{
+        width: 500px;
+        transition: all 0.5s;
+    }
+    .projects-all{
+        gap: 100px;
+        transition: all 0.5s;
+    }
+
+    .spaceman{
+        transform: scale(0.8);
+    }
+}
+
+@media screen and (max-width: 1200px){
+    header h1{
+        margin: 0px;
+        font-size: 70px;
+        transition: all 0.5s;
+    }
+    header h2{
+        top: 350px;
+        margin: 0;
+        width: 500px;
+        transition: all 0.5s;
+    }
+
+    .photo-grid{
+        max-width: 800px;
+        grid-column-gap: 10px;
+        grid-row-gap: 0px; 
+        transition: all 0.5s;
+    }
+
+    .photo-grid.side{
+        grid-template-columns: repeat(1, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+
+    #networks{
+        gap: 50px;
+    }
+}
+
+@media screen and (max-width: 1100px){
+    header h2{
+        top: 400px;
+        margin: 0;
+        width: 700px;
+        transition: all 0.5s;
+    }
+    .photo-grid{
+        max-width: 700px;
+        grid-column-gap: 10px;
+        grid-row-gap: 0px;  
+        transition: all 0.5s;
+    }
+    .phone img{
+        min-width: 300px;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    #about h3{
+        font-size: 80px;
+        transform: rotate(0deg) translateX(100px) translateY(-300px);
+        transition: all 0.5s;
+
+    }
+    .about-card{
+        transform: scale(0.7);
+    }
+    #education h3{
+        font-size: 80px;
+        transform: rotate(0deg) translateX(100px) translateY(-300px);
+        transition: all 0.5s;
+    }
+
+    #education .schools{
+        padding-left: 0;
+        padding-top: 350px;
+        transition: all 0.5s;
+
+    }
+
+    #projects h3{
+        font-size: 80px;
+        transform: rotate(0deg) translateX(100px) translateY(-300px);
+        transition: all 0.5s;
+    }
+
+    .projects-all{
+        padding-left: 50px;
+        padding-top: 150px;
+        transition: all 0.5s;
+
+    }
+
+    .phone img{
+        min-width: 400px;
+        transition: all 0.5s;
+
+    }
+
+    .spaceman img{
+        height: 600px;
+        transition: all 0.5s;
+
+    }
+    .spacex-text{
+        padding-right: 30px;
+        width: 400px;
+        transition: all 0.5s;
+    }
+
+    #portfolio h3{
+        font-size: 80px;
+        transform: rotate(0deg) translateX(100px) translateY(-300px);
+        transition: all 0.5s;
+
+    }
+
+    .photo-grid{
+        margin-left: 150px;
+        transition: all 0.5s;
+
+    }
+
+    #contact h3{
+        font-size: 80px;
+        transform: rotate(0deg) translateX(100px) translateY(-150px);
+        transition: all 0.5s;
+
+    }
+}
+
+@media screen and (max-width: 900px){
+    header h1{
+        width: 600px;
+        margin: 0px;
+        font-size: 60px;
+        transition: all 0.5s;
+    }
+
+    .phone img{
+        min-width: 300px;
+        transition: all 0.5s;
+    }
+
+    .photo-grid{
+        margin-left: 100px;
+        transition: all 0.5s;
+    }
+    #contact i{
+        transform: scale(0.8);
+    }
+
+    #contact i:hover{
+        transform: scale(1);
+        border-radius: 36px;
+        color: white;
+        background-color: black;
+    }
+    .spacex-text{
+        padding-right: 30px;
+        width: 300px;
+        transition: all 0.5s;
+    }
+    #instagram-text{
+        width: 300px;
+        transition: all 0.5s;
+    }
+}
+
+@media screen and (max-width: 850px){
+    .photo-grid{
+        grid-template-columns: repeat(1, 1fr);
+        max-width: 500px;
+        margin-left: 200px;
+    }
+}
+
+@media screen and (max-width: 800px){
+    header h1{
+        width: 400px;
+        margin: 0px;
+        font-size: 50px;
+        transition: all 0.5s;
+    }
+    header h2{
+        font-size: 30px;
+        top: 420px;
+        margin: 0;
+        width: 600px;
+        transition: all 0.5s;
+    }
+
+    #education .schools{
+        padding-top: 400px;
+    }
+
+    .projects-all{
+        padding-left: 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .phone{
+        padding-left: 100px;
+        min-height: 300px;
+        height: 500px;
+    }
+
+    #instagram-text{
+        width: 400px;
+    }
+
+    #spacex{
+        padding-top: 100px;
+        flex-direction: column;
+        gap: 0;
+        align-items: center;
+    }
+
+    .spaceman{
+        height: 400px;
+    }
+
+    .spacex-text{
+        padding-right: 0;
+    }
+
+    .photo-grid{
+        max-width: 400px;
+        margin-left: 200px;
+    }
+
+    #footer{
+        font-size: 10px;
+        
+    }
+}
+
+@media screen and (max-width: 700px){
+    header h1, header h2{
+        left: 20px;
+        transition: all 0.5s;
+    }
+
+    #navigation a{
+        font-size: 20px;
+        transition: all 0.5s;
+    }
+
+    .photo-grid{
+        margin-left: 150px;
+        transition: all 0.5s;
+
+    }
+}
+
+@media screen and (max-width: 650px){
+    #navigation a{
+        font-size: 16px;
+        transition: all 0.5s;
+    }
+}
+
+@media screen and (max-width: 600px){
+    #education .schools{
+        transform: scale(0.8);
+        transition: all 0.5s;
+    }
+    .photo-grid{
+        margin-left: 100px;
+        transition: all 0.5s;
+    }
+
+    .description{
+        font-size: 22px;
+    }
+    #instagram-text{
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 550px){
+    header h1{
+        width: 300px;
+        margin: 0px;
+        font-size: 42px;
+        transition: all 0.5s;
+    }
+    header h2{
+        font-size: 30px;
+        top: 300px;
+        margin: 0;
+        width: 200px;
+        transition: all 0.5s;
+    }
+
+    #about h3, #education h3, #projects h3, #portfolio h3{
+        font-size: 60px;
+        transform: rotate(0deg) translateX(100px) translateY(-250px);
+        transition: all 0.5s;
+    }
+
+    #contact h3{
+        font-size: 60px;
+        transform: rotate(0deg) translateX(100px) translateY(-150px);
+        transition: all 0.5s;
+    }
+
+    #contact i{
+        transform: scale(0.6);
+        transition: all 0.5s;
+
+    }
+
+    #contact i:hover{
+        transform: scale(0.8);
+    }
+
+    #networks{
+        gap: 20px;
+    }
+
+    #education .content{
+        padding-bottom: 100px;
+        transition: all 0.5s;
+
+    }
+    #about{
+        padding-bottom: 100px;
+        transition: all 0.5s;
+    }
+
+    .photo-grid{
+        margin-top: 80px;
+        margin-left: 100px;
+        max-width: 300px;
+        transition: all 0.5s;
+    }
+}
+
+@media screen and (max-width: 499px){
+    #navigation a{
+        font-size: 20px;
+        transition: all 0.5s;
+    }
+
+    .description{
+        font-size: 20px;
+    }
+
+    header h1{
+        width: 200px;
+        margin: 0px;
+        font-size: 42px;
+        transition: all 0.5s;
+    }
+    header h2{
+        font-size: 20px;
+        top: 380px;
+        margin: 0;
+        width: 350px;
+        transition: all 0.5s;
+    }
+
+    #about h3, #education h3, #projects h3, #portfolio h3{
+        font-size: 50px;
+        transform: rotate(0deg) translateX(80px) translateY(-250px);
+        transition: all 0.5s;
+    }
+
+    #contact h3{
+        font-size: 40px;
+        transform: rotate(0deg) translateX(135px) translateY(-250px);
+        transition: all 0.5s;
+    }
+
+    #contact p{
+        font-size: 25px;
+        transition: all 0.5s;
+    }
+
+    #education .schools{
+        transform: scale(0.7);
+        transition: all 0.5s;
+    }
+
+    .phone{
+        padding-left: 20px;
+    }
+
+    #spacex{
+        padding:0;
+    }
+    .photo-grid{
+        margin-left: 50px;
+    }
+
+    #contact i{
+        transform: scale(0.5);
+        transition: all 0.5s;
+
+    }
+
+    #contact i:hover{
+        transform: scale(0.8);
+    }
+
+    #networks{
+        gap: 0px;
+    }
+
+    #networks p{
+        margin: 0;
+    }
+
+    #contact-all{
+        padding: 0;
+        padding-top: 50px;
+    }
+    #footer{
+        padding: 1em 2em 2em 2em;
+    }
+}
+
+@media screen and (max-width: 400px){
+    #contact-all{
+        transform: scale(0.7);
+    }
+    
+    #contact h3{
+        font-size: 30px;
+        transform: rotate(0deg) translateX(100px) translateY(-150px);
+        transition: all 0.5s;
+    }
+    #spacex{
+        width: 375px;
+    }
+
+    #footer{
+        padding: 1em 2em 2em 2em;
+    }
+}
+
+
