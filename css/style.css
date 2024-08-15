@@ -109,6 +109,11 @@ h5{
     background-color: white;
 }
 
+.one{
+    margin-right: 10px;
+   
+}
+
 #navigation a{
     color: white;
 }
@@ -116,6 +121,7 @@ h5{
     display: flex;
     list-style-type: none;
     padding: 0px;
+    gap: 20px;
 }
 
 #navigation a{
@@ -127,10 +133,7 @@ h5{
     text-decoration: underline;
 }
 
-#navigation li{
-    margin: 0em 1em 0em 0em;
-    
-}
+
 
 #nav-content{
     display: flex;
