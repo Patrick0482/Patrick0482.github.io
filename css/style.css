@@ -349,7 +349,7 @@ header h2{
     margin-bottom: 50px;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 2fr);
     grid-column-gap: 50px;
     grid-row-gap: 50px;
     max-width: 1600px;
